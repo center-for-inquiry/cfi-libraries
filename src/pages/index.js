@@ -1,22 +1,34 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import useHomePage from "../hooks/useHomePage";
+import Banner from "../components/home-page/banner";
+import HomeMap from "../components/home-page/home-map";
+import BlogContainer from "../components/home-page/blog-container";
+import HomeTitle from "../components/home-page/home-title";
+import Gallery from "../components/home-page/gallery";
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="blue-container">
+      <div className="container" id="banner-container">
+        <Banner main={useHomePage().homeACF.mainSection} image={useHomePage().homeACF.mainImage.sourceUrl} btnText={useHomePage().homeACF.searchButtonText} />
+      </div>
+      <div className="container" id="map-container">
+        <HomeMap text={useHomePage().homeACF.mapInformation} contact={useHomePage().homeACF.simpleContactInfo} />
+      </div>
+      <div className="container" id="blog-container">
+        <HomeTitle id="blogs-title" title="Blog Posts" />
+        <BlogContainer />
+      </div>
+      <div className="container" id="gallery-container">
+        <HomeTitle id="gallery-title" title="Recent Images" />
+        <Gallery gal={useHomePage().homeACF.gallery} />
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 
-export default IndexPage
+export default IndexPage;
