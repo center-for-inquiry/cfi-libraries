@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import GalleryImg from './gallery-image';
 
 const Gallery = (props) => {
@@ -16,7 +16,8 @@ const Gallery = (props) => {
         setModal(false);
     }
 
-    document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeModal() } else {} }, false);
+    useEffect(() => document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeModal() } else {} }, false), []);
+    
 
     return(
         <>

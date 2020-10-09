@@ -1,19 +1,28 @@
-import React from "react";
-import Helmet from "react-helmet";
+import React, { useState } from "react";
 import { Link } from "gatsby";
-
 import useMenu from "../hooks/useMenu";
 
 const Header = () => {
 
+    const [spanExpand, setSpan] = useState("");
+    const [menuButton, setMenu] = useState("MENU");
+
+    function handleNavClick(e){
+        e.preventDefault();
+
+        let navIconButton = document.getElementById("nav-icon3");
+
+        if ( navIconButton.getAttribute("aria-expanded") === "true" ){
+            setSpan("");
+            setMenu("MENU");
+        } else {
+            setSpan("open");
+            setMenu ("CLOSE");
+        }
+    }
+
     return (
-        
-        <>
-            <Helmet>
-                <script src="https://centerforinquiry.org/js/new/src/nav-icon.js" type="text/javascript"></script>
-                <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></link>
-            </Helmet>
-            
+        <>  
             <nav className="navbar">
                 <a className="navbar-brand" href="/">
                         <img id="logo" className="d-none d-md-block" src="https://centerforinquiry.org/libraries/wp-content/uploads/sites/40/2020/07/cfi-libraries-white.png" alt="CSICon Logo"></img>
@@ -29,13 +38,13 @@ const Header = () => {
                     </li>
                 </ul>
 
-                <div id="menu-button">
-                  <div id="menu-text" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">MENU</div>
+                <div id="menu-button" onClick={handleNavClick} role="button" tabIndex="-1">
+                  <div id="menu-text" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">{menuButton}</div>
                   <div id="nav-icon3" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
+                      <span className={spanExpand}></span>
+                      <span className={spanExpand}></span>
+                      <span className={spanExpand}></span>
+                      <span className={spanExpand}></span>
                   </div>
                 </div>
 
@@ -57,7 +66,6 @@ const Header = () => {
                 </div>
             </nav>
         </>
-
     );
 }
 

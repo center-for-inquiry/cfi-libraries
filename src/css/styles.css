@@ -113,19 +113,19 @@ nav.navbar{
     top: 20px;
 }
 
-#nav-icon3.open span:nth-child(1), #nav-icon3.open span:nth-child(4) {
+#nav-icon3 span.open:nth-child(1), #nav-icon3 span.open:nth-child(4) {
     top: 18px;
     width: 0%;
     left: 50%;
 }
 
-#nav-icon3.open span:nth-child(2) {
+#nav-icon3 span.open:nth-child(2) {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
-#nav-icon3.open span:nth-child(3) {
+#nav-icon3 span.open:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
