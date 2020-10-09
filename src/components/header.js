@@ -13,11 +13,11 @@ const Header = () => {
         let navIconButton = document.getElementById("nav-icon3");
 
         if ( navIconButton.getAttribute("aria-expanded") === "true" ){
-            setSpan("");
-            setMenu("MENU");
-        } else {
             setSpan("open");
             setMenu ("CLOSE");
+        } else {
+            setSpan("");
+            setMenu("MENU");
         }
     }
 
