@@ -34,7 +34,7 @@ const Header = () => {
                         <Link className="nav-link" to="/search" id="catalogue-link">Catalogue</Link>
                     </li>
                     <li className="nav-item mx-auto ml-lg-2 d-inline-block">
-                        <a className="btn white-button" href="/">For Donors</a>
+                        <a className="btn white-button" target="_blank" rel="noreferrer" href="https://centerforinquiry.org/donate/to/the-center-for-inquiry/">For Donors</a>
                     </li>
                 </ul>
 
