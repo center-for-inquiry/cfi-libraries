@@ -30,11 +30,11 @@ const Header = () => {
                 </a>
 
                 <ul className="navbar-nav ml-lg-auto d-none d-lg-inline">
-                    <li className="nav-item mx-auto mr-lg-2 d-inline-block">
-                        <Link className="nav-link" to="/search" id="catalogue-link">Catalogue</Link>
+                    <li className="nav-item mx-auto mr-lg-3 d-inline-block">
+                        <Link className="nav-link" to="/search" id="catalogue-link">Catalog</Link>
                     </li>
-                    <li className="nav-item mx-auto ml-lg-2 d-inline-block">
-                        <a className="btn white-button" target="_blank" rel="noreferrer" href="https://centerforinquiry.org/donate/to/the-center-for-inquiry/">For Donors</a>
+                    <li className="nav-item mx-auto ml-lg-3 d-inline-block">
+                        <a className="btn white-button" target="_blank" rel="noreferrer" href="https://centerforinquiry.org/support/">For Donors</a>
                     </li>
                 </ul>
 

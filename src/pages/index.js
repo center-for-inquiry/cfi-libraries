@@ -24,7 +24,7 @@ const IndexPage = () => (
         <BlogContainer />
       </div>
       <div className="container" id="gallery-container">
-        <HomeTitle id="gallery-title" title="Recent Images" />
+        <HomeTitle id="gallery-title" title={useHomePage().homeACF.galleryHeading} />
         <Gallery gal={useHomePage().homeACF.gallery} />
       </div>
     </div>
