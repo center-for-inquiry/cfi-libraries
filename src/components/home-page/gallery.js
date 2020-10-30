@@ -17,7 +17,7 @@ const Gallery = (props) => {
     }
 
     useEffect(() => document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeModal() } else {} }, false), []);
-    
+    useEffect(() => window.addEventListener("click", function(e){ if(e.target == document.getElementById("thisModal")){ closeModal() } else {} }, false), []);
 
     return(
         <>
@@ -28,7 +28,7 @@ const Gallery = (props) => {
 
             </div>
 
-            <div className={modal === true ? "modal open" : "modal closed"}>
+            <div className={modal === true ? "modal open" : "modal closed"} id="thisModal">
                 <div id="modClose" onClick={closeModal} role="button" tabIndex={0}>CLOSE</div>
                 <img alt="" id="modInner" src={modSrc}></img>
             </div>
