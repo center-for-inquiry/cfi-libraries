@@ -321,7 +321,7 @@ div.blue-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.80);
+    background-color: rgba(0,0,0,.93);
 }
 
 #modClose{
@@ -331,15 +331,36 @@ div.blue-container{
     top: 15px;
     right: 25px;
     cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: ease-in-out 0.2s;
+}
+
+#modClose:hover{
+    color: black;
+    border: 2px solid white;
+    background-color: white;
 }
 
 #modInner{
-    max-height: 80vh;
+    max-height: 75vh;
+    max-width: 100%;
     position: relative;
+    display: block;
+    margin: auto;
 }
 
 .modal.closed{
     display: none;
+}
+
+.gal-cap{
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: white;
+    padding-top: 25px;
 }
 
 /* Pages ############################ */
