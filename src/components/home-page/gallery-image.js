@@ -5,7 +5,7 @@ const GalleryImg = (props) => {
         <div className="col-12 col-sm-6 col-lg-3" role="img">
             <div className="gallery-img" onClick={props.onClick}
             style={{backgroundImage: `url(${props.src})`, backgroundPosition: "center center", backgroundRepeat: "no-repeat", backgroundSize: "cover"}} 
-            alt={props.alt} role="img"></div>
+            alt={props.alt} role="img" caption={props.caption} title={props.title}></div>
         </div>
     );
 }

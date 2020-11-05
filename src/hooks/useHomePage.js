@@ -25,6 +25,7 @@ const useHomePage = () => {
                             libraryAddress
                             gallery {
                                 altText
+                                title
                                 caption
                                 sourceUrl(size: _2048X2048)
                                 id
