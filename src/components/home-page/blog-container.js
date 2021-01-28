@@ -23,7 +23,7 @@ const BlogContainer = () => {
         {blogs.map(blog => 
             <SingleBlog
             key={blog.id} 
-            image={blog["_embedded"]["wp:featuredmedia"][0]["media_details"]["sizes"]["large"]["source_url"]} 
+            image={blog["_embedded"]["wp:featuredmedia"][0]["media_details"]["sizes"]["full"]["source_url"]} 
             headerLink={blog.link}
             date={makeDate(blog.date)} 
             desc={blog.excerpt.rendered} 
