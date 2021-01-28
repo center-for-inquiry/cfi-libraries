@@ -38,8 +38,8 @@ const Gallery = (props) => {
                 <div className="col-12 mod-col">
                     <img alt="" id="modInner" src={modSrc}></img>
                     <div className="gal-cap">
-                        <h4>{title}</h4>
-                        <p>{caption}</p>
+                        <h4>{title}</h4><br></br>
+                        {caption}
                     </div>
                 </div>   
             </div>

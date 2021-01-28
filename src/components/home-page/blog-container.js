@@ -7,7 +7,7 @@ const BlogContainer = () => {
 
     useEffect(() => {
         fetch('https://centerforinquiry.org/wp-json/wp/v2/posts?_embed&categories=135&per_page=3')
-        .then(resp => resp.json())
+        .then(resp => JSON.parse(resp))
         .then(data => setBlogs(data))
     });
 
@@ -23,7 +23,7 @@ const BlogContainer = () => {
         {blogs.map(blog => 
             <SingleBlog
             key={blog.id} 
-            image={blog["_embedded"]["wp:featuredmedia"][0]["media_details"]["sizes"]["large"]["source_url"]} 
+            image={blog["_embedded"]["wp:featuredmedia"][0]["media_details"]["sizes"]["full"]["source_url"]} 
             headerLink={blog.link}
             date={makeDate(blog.date)} 
             desc={blog.excerpt.rendered} 
