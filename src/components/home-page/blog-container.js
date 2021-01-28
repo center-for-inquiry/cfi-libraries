@@ -7,7 +7,7 @@ const BlogContainer = () => {
 
     useEffect(() => {
         fetch('https://centerforinquiry.org/wp-json/wp/v2/posts?_embed&categories=135&per_page=3')
-        .then(resp => resp.json())
+        .then(resp => JSON.parse(resp))
         .then(data => setBlogs(data))
     });
 
