@@ -23,6 +23,10 @@ const Gallery = (props) => {
     useEffect(() => document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeModal() } else {} }, false), []);
     useEffect(() => window.addEventListener("click", function(e){ if(e.target === document.getElementById("thisModal")){ closeModal() } else {} }, false), []);
 
+    function makeCaption(){
+        return{__html: caption}
+    }
+
     return(
         <>
 
@@ -38,8 +42,8 @@ const Gallery = (props) => {
                 <div className="col-12 mod-col">
                     <img alt="" id="modInner" src={modSrc}></img>
                     <div className="gal-cap">
-                        <h4>{title}</h4><br></br>
-                        {caption}
+                        <h4>{title}</h4>
+                        <p dangerouslySetInnerHTML={makeCaption()}></p>
                     </div>
                 </div>   
             </div>
